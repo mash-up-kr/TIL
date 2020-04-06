@@ -159,7 +159,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 ## 스프링 시큐리티 설정
 
-스프링 시큐리티 의존성 설정은 다음과 같다.
+스프링 시큐리티 의존성 설정은 다음과 같다.  
 `compile('org.springframework.boot:spring-boot-starter-oauth2-client')`
 
 `spring-security-oauth2-client`와 `spring-security-oauth2-jose` 를 기본으로 관리한다.  
