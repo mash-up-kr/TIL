@@ -24,6 +24,6 @@ class NicknameWithLimit: ObservableObject {
 TextField("", text: $nickname.text)
 ```
 
-## ObservableObject
+## ObservableObject & @Published
 
 클래스에 `ObservableObject` 프로토콜을 상속받으면 SwiftUI와 연동이 가능하다. `@Published` 어노테이션이 붙은 변수의 값이 변경될 때 마다 `View`에게 알려줘 다시 렌더링되게 해준다.
