@@ -30,8 +30,8 @@
 8 . 이를 수신한 Local DNS는 www.naver.com에 대한 IP 주소를 나중에 다시 물어보면 바로 응답할 수 있도록  캐싱하고 그 IP 주소 정보를 pc에 전달해준다.
 
 
-- Local DNS 서버는 지금 Recursive query를 하고 있고,
-- Root, Com, Naver.com DNS는  Iterative query를 하고 있다.
+- Local DNS 서버는 지금 **Recursive query**를 하고 있고,
+- Root, Com, Naver.com DNS는  **Iterative query**를 하고 있다.
 
 <br>
 
