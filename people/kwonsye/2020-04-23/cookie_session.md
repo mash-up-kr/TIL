@@ -62,6 +62,21 @@
 - 세션 사용 사례
     - 로그인 같이 보안상 중요한 작업을 수행할 때 사용
 
+<br>
+
+### 쿠키와 세션을 사용하는 이유
+
+- HTTP 프로토콜의 특징이자 약점인 **connectionless & stateless**를 보완하기 위해서 사용한다.
+
+- connectionless
+    - 클라이언트가 요청을 한 후 응답을 받으면 접속/연결을 끊어버리는 특성 -> 리소스 낭비가 줄어듦
+    - 헤더에 keep-alive라는 값을 줘서 커넥션을 재활용하는데 HTTP1.1에서는 이것이 디폴트
+
+- stateless
+    - 통신이 끝나면 상태를 유지하지 않는 특성
+
+- 쿠키와 세션은 위의 HTTP 특징을 해결하기 위해, 즉 **클라이언트의 인증을 유지하기 위해** 사용한다.
+
 ## 참고 자료
 ---
 <a href="https://interconnection.tistory.com/74">https://interconnection.tistory.com/74</a> 
