@@ -131,6 +131,28 @@ insert into test(content) values ('테스트');
 select * from test;
 ```
 
+## EC2에서 RDS에서 접근 확인
+
+맥에선 `ssh 서비스명`, 윈도우에선 `putty` 프로그램으로 EC2에 ssh 접속한다.
+
+MySQL CLI를 설치한다.
+
+```
+sudo yum install mysql
+```
+
+설치가 다 되었다면 로컬에서 접근하듯이 계정, 비밀번호, 호스트 주소를 사용해 RDS에 접근한다.
+
+```
+mysql -u 계정 -p -h 호스트주소
+```
+
+```sql
+show databases;
+```
+
+으로 생성한 RDS가 맞는지 확인해본다.
+
 # 참고 도서
 
 스프링 부트와 AWS로 혼자 구현하는 웹 서비스
