@@ -86,6 +86,73 @@ RDS 사양이 높아지면 기본값으로 다시 돌려놓는다.
 
 로컬에서 원격 데이터베이스에 접속할 때 GUI 클라이언트를 많이 사용한다. MySQL의 대표적인 클라이언트로 Workbench, SQLyog(유료), Sequel Pro(맥 전용), DataGrip(유료) 등이 있다. 인텔리제이에서도 Database 플러그인이 있다.
 
+CTRL + SHIFTY + A 키로 **DB Browser** 창 킬 수 있다.
+
+RDS의 Host 명으로 접속을 설정한다. **Open SQL Console** 버튼으로 새 콘솔을 만든다.
+
+SQL 문을 작성한 뒤에 실행(Execute Statement) 버튼을 누르면 된다.  
+계속 실행이 안되길래 무슨 문제인가 봤더니, 문장을 꼭 드래그한 다음 실행 버튼을 누르면 된다.
+
+```sql
+use freelec_springboot2_webservice;
+```
+
+데이터베이스의 character_set, collation 설정을 확인한다.
+
+```sql
+show variables like 'c%';
+```
+
+```sql
+ALTER TABLE freelec_springboot2_webservice
+CHARACTER SET = 'utf8mb4'
+COLLATE = 'utf8mb4_general_ci';
+```
+
+으로 설정이 되지 않은 속성들을 바꿀 수 있다.
+
+```sql
+select @@time_zone,, now();
+```
+
+타임존을 확인할 수 있다.
+
+다음은 간단한 쿼리를 실습해본다.
+
+```sql
+CREATE TABLE test (
+    id bigint(20) NOT NULL AUTO_INCREMENT,
+    content varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+insert into test(content) values ('테스트');
+
+select * from test;
+```
+
+## EC2에서 RDS에서 접근 확인
+
+맥에선 `ssh 서비스명`, 윈도우에선 `putty` 프로그램으로 EC2에 ssh 접속한다.
+
+MySQL CLI를 설치한다.
+
+```
+sudo yum install mysql
+```
+
+설치가 다 되었다면 로컬에서 접근하듯이 계정, 비밀번호, 호스트 주소를 사용해 RDS에 접근한다.
+
+```
+mysql -u 계정 -p -h 호스트주소
+```
+
+```sql
+show databases;
+```
+
+으로 생성한 RDS가 맞는지 확인해본다.
+
 # 참고 도서
 
 스프링 부트와 AWS로 혼자 구현하는 웹 서비스
